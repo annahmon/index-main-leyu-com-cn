@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>乐鱼体育 · 识趣有据</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f7fafc;
+            color: #1a2a3a;
+            line-height: 1.7;
+            padding: 1.5rem 1rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 880px;
+            width: 100%;
+        }
+
+        /* 开篇卡片 — 故事式短句 */
+        .hero-greeting {
+            background: linear-gradient(145deg, #e6f0f5 0%, #d9e9f0 100%);
+            border-radius: 32px 32px 32px 8px;
+            padding: 2.2rem 1.8rem 2rem;
+            margin-bottom: 2.4rem;
+            box-shadow: 0 6px 20px rgba(30, 70, 90, 0.06);
+            border-left: 6px solid #2a7f8f;
+        }
+
+        .hero-greeting h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0e4b5c;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-greeting .lead {
+            font-size: 1.15rem;
+            color: #1f5b6a;
+            background: rgba(255, 255, 255, 0.55);
+            display: inline-block;
+            padding: 0.25rem 1rem 0.25rem 0.75rem;
+            border-radius: 30px;
+            backdrop-filter: blur(2px);
+            margin-top: 0.5rem;
+        }
+
+        .hero-greeting p {
+            margin-top: 1.2rem;
+            color: #1a3e4a;
+            font-weight: 400;
+            max-width: 90%;
+        }
+
+        /* 承接段落 — 从用户想快速识别网站用途切入 */
+        .context-block {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0, 30, 40, 0.04);
+            border: 1px solid #d3e4ea;
+        }
+
+        .context-block .highlight {
+            color: #1d6d7e;
+            font-weight: 500;
+        }
+
+        .context-block a {
+            color: #0f6d82;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #9fcbd7;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .context-block a:hover {
+            border-bottom-color: #0e4b5c;
+            color: #053e4d;
+        }
+
+        /* 网格卡片 — 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0 2.2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.3rem 1rem 1.1rem;
+            box-shadow: 0 2px 10px rgba(40, 90, 100, 0.04);
+            border: 1px solid #dbeef3;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 80, 100, 0.08);
+            border-color: #9ac2ce;
+        }
+
+        .feature-card .emoji-marker {
+            display: inline-block;
+            background: #d4eaf0;
+            color: #175e6e;
+            border-radius: 40px;
+            padding: 0.15rem 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #124f60;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #2d5b68;
+            opacity: 0.85;
+        }
+
+        /* 温和的结尾区域 */
+        .gentle-closing {
+            background: #e5f0f5;
+            border-radius: 28px 28px 28px 12px;
+            padding: 1.8rem 1.6rem 1.6rem;
+            margin: 2.4rem 0 1.2rem;
+            border-right: 6px solid #54a2b5;
+        }
+
+        .gentle-closing p {
+            color: #1d4b59;
+            font-size: 1rem;
+        }
+
+        .gentle-closing .footnote {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #3a7181;
+            border-top: 1px dashed #a6c9d6;
+            padding-top: 0.9rem;
+        }
+
+        .gentle-closing a {
+            color: #0a5a6e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #7fb7c7;
+            font-weight: 400;
+        }
+
+        .gentle-closing a:hover {
+            color: #043d4b;
+            text-decoration-color: #064652;
+        }
+
+        .skip-note {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #5f8795;
+            margin-top: 0.6rem;
+            opacity: 0.7;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #c9dee6;
+            margin: 0.5rem 0 1.2rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem 0.6rem 2.5rem;
+            }
+
+            .hero-greeting {
+                padding: 1.8rem 1.2rem 1.6rem;
+                border-left-width: 4px;
+            }
+
+            .hero-greeting h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-greeting p {
+                max-width: 100%;
+            }
+
+            .context-block {
+                padding: 1.4rem 1rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+
+            .gentle-closing {
+                padding: 1.4rem 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 开场：一句话短句 —— 直接又温和的辨识 -->
+    <div class="hero-greeting">
+        <h1>一眼认出来。</h1>
+        <span class="lead">你找的，就在这里。</span>
+        <p>打开页面，你不需要反复猜测用途。设计简洁、线索清晰——这个站点指向一个你很可能在找的名字：<strong style="color:#0b5669;">乐鱼体育</strong>。</p>
+    </div>
+
+    <!-- 承接段落：从用户想快速识别网站用途的角度 -->
+    <div class="context-block">
+        <p>很多体育爱好者来到一个陌生网址，第一反应是：<span class="highlight">这地方是干什么的？靠谱吗？</span><br>
+        其实很多时候，你只需要一个明确的指向——<a href="https://index-main-leyu.com.cn">乐鱼体育</a>，正是这个页面的核心关联。它不是一个泛泛的体育信息聚合，也不是某个赛事直播的临时页。从域名到内容线索，都表明这是围绕“乐鱼体育”四个字展开的简明入口。</p>
+        <p style="margin-top:0.8rem;">如果你之前接触过相关服务或社区，那么看到这里应该已经确认了方向。页面没有多余的装饰，只希望你用最短的时间完成识别。</p>
+    </div>
+
+    <!-- 特点列表：网格卡片, 蓝绿点缀 -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="emoji-marker">⛳ 指向</span>
+            <h3>单一焦点</h3>
+            <p>整个页面围绕一个核心名称构建，没有信息干扰。</p>
+        </div>
+        <div class="feature-card">
+            <span class="emoji-marker">🧭 识别</span>
+            <h3>快速定位</h3>
+            <p>从视觉到文字，都在帮你确认这是不是你要找的站点。</p>
+        </div>
+        <div class="feature-card">
+            <span class="emoji-marker">📋 轻量</span>
+            <h3>克制叙述</h3>
+            <p>不堆砌功能清单，只呈现必要的介绍与关联。</p>
+        </div>
+        <div class="feature-card">
+            <span class="emoji-marker">🔗 直接</span>
+            <h3>明确链接</h3>
+            <p>页面唯一的主链接就是<a href="https://index-main-leyu.com.cn" style="color:#125f72;border-bottom:1px solid #7fbaca;">乐鱼体育</a>，自然嵌入句内。</p>
+        </div>
+    </div>
+
+    <!-- 一个小场景/提示段落（以对话感收束） -->
+    <div style="background: #f2f8fb; border-radius: 20px; padding: 1.2rem 1.5rem; margin: 1.2rem 0 1.8rem;">
+        <p style="display: flex; gap: 0.4rem; align-items: baseline; flex-wrap: wrap;">
+            <span style="background: #c1dee9; color:#174f5e; border-radius: 30px; padding:0 0.6rem; font-size:0.8rem; font-weight: 500;">💬 常见疑问</span>
+            <span style="color:#1d5f70;">“这个页面只有一个链接吗？”</span>
+        </p>
+        <p style="color: #205d6d; margin-top: 0.3rem;">是的。因为它的设计意图就是让你快速识别并连接至 <a href="https://index-main-leyu.com.cn" style="color:#106575;text-decoration: underline; text-underline-offset: 2px;">乐鱼体育</a>，而不是成为一个门户。少即是多，尤其是在你只想确认一件事的时候。</p>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-closing">
+        <p>当你看到这里，大概已经明白了这个页面的存在理由。它不是为了兜售什么，也不是为了制造悬念，只是作为一个安静的起点——把“乐鱼体育”这个名称放在你面前，不加渲染，不必绕路。</p>
+        <div class="footnote">
+            <span>如果你愿意，现在就可以通过这个链接进一步了解：</span>
+            <a href="https://index-main-leyu.com.cn">乐鱼体育</a>
+            <span>。页面很轻，决定也很轻。</span>
+        </div>
+        <div class="skip-note">—— 叙述到此，不多不少。</div>
+    </div>
+
+    <!-- 最下方灰色小字（非必需，但作为收尾节奏） -->
+    <hr>
+    <p style="text-align:center; font-size:0.75rem; color:#6c97a7; opacity:0.6; margin-top: 0.4rem;">简洁 · 识别 · 指向 · 乐鱼体育</p>
+</div>
+</body>
+</html>
