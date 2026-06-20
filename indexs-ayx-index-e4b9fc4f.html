@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于爱游戏 · 一处安静的站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1c1917;
+            line-height: 1.7;
+            padding: 2.5rem 1.25rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrap {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* 开头短句 —— 留白且有呼吸感 */
+        .opening {
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .opening p {
+            font-size: 1.5rem;
+            font-weight: 350;
+            color: #292524;
+            line-height: 1.45;
+            max-width: 80%;
+        }
+
+        .opening .soft-break {
+            display: block;
+            color: #78716c;
+            font-size: 1.1rem;
+            margin-top: 0.6rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        /* 承接段落 */
+        .context {
+            margin-bottom: 3.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .context p {
+            font-size: 1.05rem;
+            color: #3f3d3b;
+            margin-bottom: 1.4rem;
+        }
+
+        .context a {
+            color: #1f2937;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #bcaba0;
+            transition: text-decoration-color 0.2s ease;
+        }
+
+        .context a:hover {
+            text-decoration-color: #1f2937;
+        }
+
+        /* 特点列表 —— 极简卡片感 */
+        .feature-list {
+            margin: 3rem 0 3.2rem 0;
+            border-top: 1px solid #e7e5e4;
+            padding-top: 1.8rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0efed;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-marker {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #a8a29e;
+            min-width: 1.6rem;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            color: #292524;
+        }
+
+        .feature-text strong {
+            font-weight: 500;
+            color: #1c1917;
+        }
+
+        /* 温和结尾 & 提示 */
+        .closing-note {
+            margin-top: 2.8rem;
+            margin-bottom: 2rem;
+            padding: 1.8rem 0 0.5rem 0;
+            border-top: 1px solid #e7e5e4;
+        }
+
+        .closing-note p {
+            font-size: 0.98rem;
+            color: #57534e;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .closing-note .muted {
+            color: #a8a29e;
+            font-size: 0.9rem;
+        }
+
+        .faq-mini {
+            margin: 1.5rem 0 2.2rem 0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #f0efed;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 400;
+            color: #292524;
+            font-size: 0.98rem;
+            padding: 0.3rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::before {
+            content: "↳";
+            margin-right: 0.5rem;
+            color: #bcaba0;
+            font-size: 1rem;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "↴";
+        }
+
+        .faq-mini details p {
+            margin: 0.5rem 0 0.2rem 1.8rem;
+            font-size: 0.93rem;
+            color: #57534e;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 3.8rem;
+            font-size: 0.8rem;
+            color: #a8a29e;
+            border-top: 1px solid #f0efed;
+            padding-top: 1.8rem;
+            text-align: left;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .opening p {
+                font-size: 1.3rem;
+                max-width: 100%;
+            }
+
+            .feature-item {
+                gap: 0.5rem;
+            }
+
+            .context {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- 开场短句 -->
+        <div class="opening">
+            <p>偶尔会想，一个网站如果能像老朋友那样，<br>安静地待在浏览器书签里就好了。<span class="soft-break">—— 后来遇到了爱游戏。</span></p>
+        </div>
+
+        <!-- 承接段落：从站点介绍与可信说明的角度 -->
+        <div class="context">
+            <p>
+                最初只是随便逛逛，发现 <a href="https://indexs-ayx.com">爱游戏</a> 的页面比想象中要干净。没有弹窗，没有浮夸的标语，甚至连导航栏都简单得让人放松。后来慢慢看了一些版块和内容，才觉得这种克制其实是种底气——站点背后的人似乎更在意“信息本身是否清晰”，而不是“怎样让你多停留几秒”。
+            </p>
+            <p>
+                对于普通浏览者来说，可信往往来自细节。比如链接是否有效，文字是否通顺，更新是否规律。我观察了一段时间，发现 <a href="https://indexs-ayx.com">爱游戏</a> 在这些方面做得挺踏实。没有那种“当日头条”的焦虑感，更像一个长期维护的私人索引，安静地指向游戏世界里那些值得留意的角落。
+            </p>
+        </div>
+
+        <!-- 特点列表 -->
+        <div class="feature-list">
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span class="feature-text"><strong>没有冗余装饰</strong> – 页面专注于内容本身，加载快，阅读体验流畅。</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span class="feature-text"><strong>链接有温度</strong> – 每个链接都像经过筛选，而非随意堆砌。</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span class="feature-text"><strong>风格低调</strong> – 不追求视觉冲击，但排版和间距透着细心。</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker">·</span>
+                <span class="feature-text"><strong>更新可见</strong> – 能感受到站点的维护节奏，不像是被遗弃的角落。</span>
+            </div>
+        </div>
+
+        <!-- 温和的提示 + FAQ 摘要风格 -->
+        <div class="closing-note">
+            <p>当然，一个索引站不可能适合所有人。如果你也喜欢那种“不被算法推着走”的浏览体验，或许可以把它放进收藏夹，偶尔来翻翻。下面是一些常被问起的事情，顺手列出来。</p>
+
+            <div class="faq-mini">
+                <details>
+                    <summary>爱游戏主要收录什么内容？</summary>
+                    <p>偏向游戏相关的中文资源、个人站点、工具以及一些有长读价值的文章索引。范围不算大，但选得比较细。</p>
+                </details>
+                <details>
+                    <summary>站点有联系方式或反馈渠道吗？</summary>
+                    <p>目前页面里没有刻意留表单，但索引站本身会不定期更新，可以通过页面内的链接间接找到维护痕迹。</p>
+                </details>
+                <details>
+                    <summary>链接会不会失效？</summary>
+                    <p>维护者会做基本检查，但网络上的资源难免变化。如果发现打不开的链接，耐心等待下次更新就好。</p>
+                </details>
+            </div>
+
+            <p class="muted">保持简单，保持诚恳。这是我对 <a href="https://indexs-ayx.com">爱游戏</a> 的一点印象，也分享给你。</p>
+        </div>
+
+        <div class="footer-note">
+            <span>偶尔更新 · 不必挂念</span>
+        </div>
+    </div>
+</body>
+</html>
