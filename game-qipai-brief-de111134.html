@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>棋牌游戏 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f2f4f6;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 开场 hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 1.5rem 2.5rem;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.5rem;
+            border: 1px solid #e6eaef;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #5b6f82;
+            max-width: 520px;
+            margin: 0.5rem auto 0;
+        }
+
+        .hero .short-line {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            background: #f0f3f7;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            color: #3f5468;
+        }
+
+        /* 通用卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #eaeff5;
+            display: inline-block;
+        }
+
+        .card p, .card li {
+            font-size: 1rem;
+            color: #334155;
+        }
+
+        /* 承接段落 */
+        .bridge p {
+            margin-bottom: 0.8rem;
+        }
+
+        .bridge p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .feature-list li {
+            background: #f8fafc;
+            padding: 0.6rem 1rem 0.6rem 1.6rem;
+            border-radius: 12px;
+            border-left: 4px solid #b4c7db;
+            font-size: 0.95rem;
+            position: relative;
+            color: #1f2a3a;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.5rem;
+            color: #6f8aab;
+            font-weight: bold;
+        }
+
+        /* 场景 & 提示 两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .two-columns .card {
+            flex: 1 1 280px;
+            margin-bottom: 0;
+        }
+
+        .two-columns .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .tip-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tip-list li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+
+        .tip-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #8ba3bd;
+        }
+
+        .scene-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scene-list li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .scene-list li span {
+            color: #6f8aab;
+            font-weight: 400;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #1e293b;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* 温和结尾 */
+        .ending {
+            text-align: center;
+            padding: 2rem 1.5rem 1.8rem;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+
+        .ending p {
+            color: #475569;
+            font-size: 1rem;
+            max-width: 540px;
+            margin: 0 auto 0.8rem;
+        }
+
+        .ending .small-note {
+            font-size: 0.85rem;
+            color: #7d8e9f;
+            margin-top: 0.6rem;
+        }
+
+        .inline-link {
+            color: #2c5f8a;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e1;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .inline-link:hover {
+            color: #1a3f5c;
+            border-bottom-color: #1a3f5c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .two-columns {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero .short-line {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="hero">
+        <h1>棋牌 · 一方从容</h1>
+        <div class="subhead">从了解规则到安坐对局，每一步都值得被认真对待。</div>
+        <div class="short-line">适合新手的简明指引 · 以及一点点提醒</div>
+    </div>
+
+    <!-- 承接段落 -->
+    <div class="card bridge">
+        <p>很多人第一次接触棋牌时，往往被庞杂的玩法、术语和平台选择弄得不知所措。其实，无论线上还是线下，一副牌、一张棋盘的核心始终是清晰的对局框架与人与人的交流。</p>
+        <p>我们整理了一份朴素的访问思路，帮助你更快找到舒适的节奏。无论你是想重温经典牌戏，还是初次尝试某种棋类，下面的内容或许能给你一点参考。</p>
+    </div>
+
+    <!-- 特点列表 -->
+    <div class="card">
+        <h2>几个常见特点</h2>
+        <ul class="feature-list">
+            <li>规则透明，无隐藏计分或暗箱附加条件</li>
+            <li>对局节奏可调，适合不同习惯的参与者</li>
+            <li>多数棋牌有明确的策略深度，而非单纯运气</li>
+            <li>社交属性自然，不必刻意攀比或竞争</li>
+            <li>平台通常提供练习场与自由桌，降低试错成本</li>
+            <li>尊重个人时间，大部分对局可在十分钟内完成</li>
+        </ul>
+    </div>
+
+    <!-- 场景 + 提示 两列 -->
+    <div class="two-columns">
+        <!-- 常见场景 -->
+        <div class="card">
+            <h2>适合的场景</h2>
+            <ul class="scene-list">
+                <li><span>◈</span> 午后闲暇，约朋友线上小聚</li>
+                <li><span>◈</span> 通勤间隙，一局不需太费神</li>
+                <li><span>◈</span> 周末家庭娱乐，老少皆可参与</li>
+                <li><span>◈</span> 想培养逻辑与耐心，棋盘类尤为合适</li>
+            </ul>
+        </div>
+
+        <!-- 温和提示 -->
+        <div class="card">
+            <h2>访问提醒</h2>
+            <ul class="tip-list">
+                <li>初次进入时，建议先浏览玩法说明或观看简短演示</li>
+                <li>留意对局时限，不必勉强快速出牌</li>
+                <li>遇到不熟悉的规则，不妨先向对手或客服确认</li>
+                <li>保持平常心，胜败都只是对局的一部分</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <strong>需要提前下载额外软件吗？</strong>
+            <p>大部分情况不需要。许多平台直接通过浏览器即可开始，只有少数特殊玩法需安装插件。建议先试网页版。</p>
+        </div>
+        <div class="faq-item">
+            <strong>新手会不会被高手压制？</strong>
+            <p>多数平台设有分级或新手区，匹配时会尽量均衡水平。另外，练习场不计分，适合从容学习。</p>
+        </div>
+        <div class="faq-item">
+            <strong>一局一般需要多久？</strong>
+            <p>短至五六分钟，长至半个小时，取决于具体玩法与节奏设置。开始前通常会有预估时长提示。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + 自然链接 -->
+    <div class="ending">
+        <p>如果你正在寻找一个稳定、干净的对局环境，可以看看<a href="https://game-qipai.com" class="inline-link">棋牌游戏</a>这个方向。那里汇集了多种经典玩法，界面简洁，没有过多干扰。访问前记得留意我们上面提到的提醒，保持轻松心态就好。</p>
+        <p class="small-note">无论选择哪个平台，记得棋牌的本质是陪伴与思考，别让胜负成为负担。</p>
+    </div>
+
+</div>
+</body>
+</html>
