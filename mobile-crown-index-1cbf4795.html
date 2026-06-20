@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 皇冠体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #b91c3c;
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #7f1d2e;
+        }
+
+        /* ===== 深色头图 ===== */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 70%, #334155 100%);
+            color: #e2e8f0;
+            padding: 3.8rem 1.5rem 3rem;
+            text-align: center;
+            border-bottom: 4px solid #b91c3c;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(185, 28, 60, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #fca5a5;
+            margin-top: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* ===== 内容容器 ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.4rem 1.5rem 3.5rem;
+        }
+
+        /* ===== 简介段落 ===== */
+        .intro-block {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 3rem;
+        }
+
+        .intro-block p {
+            font-size: 1rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-link {
+            background: #fee2e2;
+            padding: 0.15rem 0.3rem;
+            border-radius: 4px;
+        }
+
+        /* ===== 场景模块 (三个卡片) ===== */
+        .scenes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.6rem;
+            margin-bottom: 2.8rem;
+        }
+
+        @media (min-width: 680px) {
+            .scenes {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-left: 4px solid #b91c3c;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .scene-card .emoji-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 0.25rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #334155;
+            margin-bottom: 0.7rem;
+        }
+
+        /* ===== 常见说明 (FAQ 摘要风格) ===== */
+        .faq-section {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 2rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item .question {
+            font-weight: 600;
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item .answer {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* ===== 访问提醒（轻量提示带） ===== */
+        .notice-strip {
+            background: #fee2e2;
+            border-left: 6px solid #b91c3c;
+            padding: 1rem 1.5rem;
+            border-radius: 14px;
+            margin: 2.5rem 0 1.2rem;
+            color: #7f1d2e;
+            font-size: 0.95rem;
+        }
+
+        .notice-strip strong {
+            font-weight: 600;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            text-align: center;
+            padding: 1.8rem 1rem;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 0.5rem;
+        }
+
+        .footer a {
+            color: #64748b;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #1e293b;
+            text-decoration: underline;
+        }
+
+        /* ===== 响应式微调 ===== */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-block, .faq-section {
+                padding: 1.5rem 1.2rem;
+            }
+            .scene-card {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>简明指南 · 皇冠体育</h1>
+    <p>围绕核心服务的轻量导航，提供场景指引与常见说明，帮助你快速了解平台定位与使用方法。</p>
+    <span class="tagline">信息密度 · 务实视角</span>
+</header>
+
+<main class="container">
+
+    <!-- 核心介绍 -->
+    <div class="intro-block">
+        <p>
+            <strong>皇冠体育</strong> 是一个聚焦体育赛事与综合娱乐的数字服务平台。平台以简洁的交互路径和稳定的内容输出见长，用户可通过
+            <span class="highlight-link"><a href="https://mobile-crown.com">皇冠体育</a></span>
+            直接访问主站，获取赛事数据、活动资讯及账户服务。本节从访问方式与使用场景出发，梳理三类常见需求，并附上简明提醒，帮助你更高效地使用平台。
+        </p>
+        <p>
+            以下三个模块分别对应「信息获取」「功能操作」与「辅助支持」三类典型场景，每一类均附有简要说明，方便按需查阅。
+        </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <section class="scenes">
+        <div class="scene-card">
+            <span class="emoji-badge">📡 场景一</span>
+            <h3>赛事动态与数据</h3>
+            <p>
+                关注主流联赛、杯赛及即时比分。平台聚合赛程、战绩与统计信息，适合赛前参考与赛后回顾。通过
+                <a href="https://mobile-crown.com">皇冠体育</a>
+                首页可直达赛事板块，无需多层跳转。
+            </p>
+        </div>
+        <div class="scene-card">
+            <span class="emoji-badge">⚙️ 场景二</span>
+            <h3>账户与服务设置</h3>
+            <p>
+                包括登录验证、个人资料更新、安全偏好及通知管理。建议首次使用时完成资料核对，并绑定常用联系方式。所有操作均在加密通道内完成。
+            </p>
+        </div>
+        <div class="scene-card">
+            <span class="emoji-badge">🧩 场景三</span>
+            <h3>使用协助与指引</h3>
+            <p>
+                新用户可查阅平台内置的帮助中心，内容涵盖注册流程、充值方式、规则说明等常见问题。若需人工支持，也可通过站内工单系统提交咨询。
+            </p>
+        </div>
+    </section>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section">
+        <h2>常见说明 · 摘要</h2>
+        <div class="faq-item">
+            <span class="question">Q: 是否需要注册才能浏览主要内容？</span>
+            <div class="answer">部分赛事数据和资讯支持游客浏览；涉及个人账户的操作（如订阅、记录查看）则需登录。建议提前完成注册以解锁完整功能。</div>
+        </div>
+        <div class="faq-item">
+            <span class="question">Q: 移动端与桌面端体验是否一致？</span>
+            <div class="answer">平台采用响应式设计，在手机、平板与桌面浏览器上均可获得基本一致的布局与操作方式。推荐使用最新版浏览器访问。</div>
+        </div>
+        <div class="faq-item">
+            <span class="question">Q: 如何确认自己使用的是安全连接？</span>
+            <div class="answer">请始终在浏览器地址栏中确认网址为 <code>https://mobile-crown.com</code>，并检查页面地址旁是否有锁形图标。不要通过第三方链接或非官方渠道进入。</div>
+        </div>
+    </div>
+
+    <!-- 访问提醒 -->
+    <div class="notice-strip">
+        <strong>访问提醒：</strong> 请直接通过官方域名 <a href="https://mobile-crown.com" style="color:#7f1d2e;text-decoration:underline;">皇冠体育</a> 进入平台，避免使用非官方镜像或未经核实的短链接。定期修改账户密码并启用双重验证，可进一步提升安全性。
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>简明指南 · 基于实际使用场景整理 · 内容仅供参考</p>
+    <p><a href="https://mobile-crown.com">皇冠体育</a> — 官方主站</p>
+</footer>
+
+</body>
+</html>
